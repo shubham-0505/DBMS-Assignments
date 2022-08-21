@@ -341,4 +341,51 @@ mysql> show tables;
 mysql> select * from employee;
 Empty set (0.00 sec)
 
+mysql> create table emp_info(emp_experience varchar(20) NOT NULL);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_institute |
++---------------------+
+| emp_info            |
+| employee            |
++---------------------+
+2 rows in set (0.00 sec)
+
+mysql> desc emp_info;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| emp_experience | varchar(20) | NO   |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+
+mysql> alter table emp_info add column emp_dob int unique;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc emp_info;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| emp_experience | varchar(20) | NO   |     | NULL    |       |
+| emp_dob        | int         | YES  | UNI | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> alter table emp_info add check (emp_experience>=10);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc emp_info;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| emp_experience | varchar(20) | NO   |     | NULL    |       |
+| emp_dob        | int         | YES  | UNI | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
 mysql> 
