@@ -281,6 +281,7 @@ mysql> desc student_view;
 +-------+-------------+------+-----+---------+-------+
 3 rows in set (0.00 sec)
 
+-- DROP VIEW
 mysql> drop view student_view;
 Query OK, 0 rows affected (0.01 sec)
 
