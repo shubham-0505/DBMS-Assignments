@@ -84,6 +84,7 @@ mysql> select * from customers;
 +---------+----------------+------------+
 5 rows in set (0.00 sec)
 
+-- INNER JOIN
 mysql> select orders.order_id,orders.order_name,customers.cust_name,customers.cust_city
     -> from orders INNER JOIN customers on orders.cust_id=customers.cust_id;
 +----------+-------------+---------------+-----------+
@@ -95,6 +96,7 @@ mysql> select orders.order_id,orders.order_name,customers.cust_name,customers.cu
 +----------+-------------+---------------+-----------+
 3 rows in set (0.00 sec)
 
+-- LEFT JOIN
 mysql> select orders.order_id,orders.order_name,customers.cust_name,customers.cust_city
     -> from orders LEFT JOIN customers on orders.cust_id=customers.cust_id;
 +----------+-------------+---------------+-----------+
@@ -108,6 +110,7 @@ mysql> select orders.order_id,orders.order_name,customers.cust_name,customers.cu
 +----------+-------------+---------------+-----------+
 5 rows in set (0.00 sec)
 
+-- RIGHT JOIN
 mysql> select orders.order_id,orders.order_name,customers.cust_name,customers.cust_city 
     -> from orders RIGHT JOIN customers on orders.cust_id=customers.cust_id;
 +----------+-------------+----------------+------------+
@@ -121,6 +124,7 @@ mysql> select orders.order_id,orders.order_name,customers.cust_name,customers.cu
 +----------+-------------+----------------+------------+
 5 rows in set (0.00 sec)
 
+-- CROSS JOIN
 mysql> select orders.order_id,orders.order_name,customers.cust_name,customers.cust_city
     -> from orders CROSS JOIN customers;
 +----------+-------------+----------------+------------+
@@ -197,6 +201,7 @@ mysql> select * from student_info;
 +------+--------+------+-------+----------+
 6 rows in set (0.00 sec)
 
+-- Nested Queries/Sub Queries
 mysql> select * from student_info where age > (select age from student_info where id=5);
 +------+--------+------+-------+---------+
 | id   | name   | age  | grade | city    |
@@ -207,6 +212,7 @@ mysql> select * from student_info where age > (select age from student_info wher
 +------+--------+------+-------+---------+
 3 rows in set (0.00 sec)
 
+-- IN Operator
 mysql> select * from student_info where id IN (2,6);
 +------+-------+------+-------+---------+
 | id   | name  | age  | grade | city    |
@@ -216,6 +222,7 @@ mysql> select * from student_info where id IN (2,6);
 +------+-------+------+-------+---------+
 2 rows in set (0.00 sec)
 
+-- BETWEEN Operator
 mysql> select * from student_info where id BETWEEN 2 AND 6;
 +------+--------+------+-------+---------+
 | id   | name   | age  | grade | city    |
@@ -228,6 +235,7 @@ mysql> select * from student_info where id BETWEEN 2 AND 6;
 +------+--------+------+-------+---------+
 5 rows in set (0.00 sec)
 
+-- CREATE VIEW
 mysql> create view view1 as select name,age,city from student_info;
 Query OK, 0 rows affected (0.01 sec)
 
@@ -244,6 +252,7 @@ mysql> select * from view1;
 +--------+------+----------+
 6 rows in set (0.00 sec)
 
+-- ALTER VIEW
 mysql> alter view view1 as select name,age,city from student_info where age=14;
 Query OK, 0 rows affected (0.00 sec)
 
@@ -256,6 +265,7 @@ mysql> select * from view1;
 +-------+------+---------+
 2 rows in set (0.00 sec)
 
+-- RENAME VIEW
 mysql> rename table view1 to student_view;
 Query OK, 0 rows affected (0.01 sec)
 
