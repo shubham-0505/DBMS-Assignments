@@ -281,4 +281,12 @@ mysql> desc student_view;
 +-------+-------------+------+-----+---------+-------+
 3 rows in set (0.00 sec)
 
+mysql> drop view student_view;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc student_view;
+ERROR 1146 (42S02): Table 'school.student_view' doesn't exist
 mysql> 
+[2]+  Stopped                 sudo mysql -u root -p
+ubuntu@ubuntu-virtual-machine:~$ 
+
