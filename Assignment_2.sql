@@ -1,4 +1,4 @@
-Assignment 2
+Assignment_2
 
 ubuntu@ubuntu-virtual-machine:~$ sudo mysql -u root -p
 Enter password: 
