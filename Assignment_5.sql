@@ -1,14 +1,14 @@
 
 C:\Users\Shubham>sqlplus
 
-SQL*Plus: Release 21.0.0.0.0 - Production on Wed Sep 28 23:24:44 2022
+SQL*Plus: Release 21.0.0.0.0 - Production on Wed Sep 28 23:37:01 2022
 Version 21.3.0.0.0
 
 Copyright (c) 1982, 2021, Oracle.  All rights reserved.
 
 Enter user-name: System
 Enter password:
-Last Successful login time: Wed Sep 28 2022 22:38:40 +05:30
+Last Successful login time: Wed Sep 28 2022 23:36:05 +05:30
 
 Connected to:
 Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
@@ -52,7 +52,7 @@ SQL> BEGIN
   3  categorization(02,'Vasudev',970);
   4  categorization(03,'Govind',880);
   5  categorization(04,'Murlidhar',700);
-  6  categorization(04,'Murlidhar',450);
+  6  categorization(05,'Shyam',450);
   7  END;
   8  /
 Distinction !
@@ -86,7 +86,7 @@ TOTAL_MARKS
 Murlidhar
         700
 
-Murlidhar
+Shyam
         450
 
 
@@ -128,8 +128,8 @@ CATEGORY
 ------------------------------
 Lower Second Class Category
 
-         4
-Murlidhar
+         5
+Shyam
 Failed !
 
 
