@@ -24,37 +24,37 @@ Table created.
 
 SQL> SET SERVEROUTPUT ON
 SQL> CREATE OR REPLACE PROCEDURE categorization (student_id IN number, student_name IN varchar2,marks IN number) AS
-  2      BEGIN
-  3      IF (marks<=1500 and marks>=990) THEN
-  4      dbms_output.put_line('Distinction !');
-  5      INSERT INTO student_result VALUES (student_id,student_name,'Distinction !');
-  6      ELSIF (marks<=989 and marks>=900) THEN
-  7      dbms_output.put_line('First Class Category');
-  8      INSERT INTO student_result VALUES (student_id,student_name,'First Class Category');
-  9      ELSIF (marks<=899 and marks>825) THEN
- 10      dbms_output.put_line('Higher Second Class Category');
- 11      INSERT INTO student_result VALUES(student_id,student_name,'Higher Second Class Category');
- 12      ELSIF (marks<=825 and marks>500) THEN
- 13      dbms_output.put_line('Lower Second Class Category');
- 14      INSERT INTO student_result VALUES(student_id,student_name,'Lower Second Class Category');
- 15      ELSE
- 16      dbms_output.put_line('Failed !');
- 17      INSERT INTO student_result VALUES(student_id,student_name,'Failed !');
- 18      END IF;
- 19      INSERT INTO student_marks VALUES(student_name,marks);
- 20      END categorization;
- 21      /
+        BEGIN
+        IF (marks<=1500 and marks>=990) THEN
+        dbms_output.put_line('Distinction !');
+        INSERT INTO student_result VALUES (student_id,student_name,'Distinction !');
+        ELSIF (marks<=989 and marks>=900) THEN
+        dbms_output.put_line('First Class Category');
+        INSERT INTO student_result VALUES (student_id,student_name,'First Class Category');
+        ELSIF (marks<=899 and marks>825) THEN
+        dbms_output.put_line('Higher Second Class Category');
+        INSERT INTO student_result VALUES(student_id,student_name,'Higher Second Class Category');
+        ELSIF (marks<=825 and marks>500) THEN
+        dbms_output.put_line('Lower Second Class Category');
+        INSERT INTO student_result VALUES(student_id,student_name,'Lower Second Class Category');
+        ELSE
+        dbms_output.put_line('Failed !');
+        INSERT INTO student_result VALUES(student_id,student_name,'Failed !');
+        END IF;
+        INSERT INTO student_marks VALUES(student_name,marks);
+        END categorization;
+        /
 
 Procedure created.
 
 SQL> BEGIN
-  2  categorization(01,'Krishna',1300);
-  3  categorization(02,'Vasudev',970);
-  4  categorization(03,'Govind',880);
-  5  categorization(04,'Murlidhar',700);
-  6  categorization(05,'Shyam',450);
-  7  END;
-  8  /
+    categorization(01,'Krishna',1300);
+    categorization(02,'Vasudev',970);
+    categorization(03,'Govind',880);
+    categorization(04,'Murlidhar',700);
+    categorization(05,'Shyam',450);
+    END;
+    /
 Distinction !
 First Class Category
 Higher Second Class Category
