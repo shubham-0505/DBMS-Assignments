@@ -79,19 +79,19 @@ Available
 6 rows selected.
 
 SQL> CREATE OR REPLACE TRIGGER audits AFTER INSERT OR UPDATE OR DELETE ON library FOR EACH ROW
-  2      BEGIN
-  3      IF UPDATING THEN
-  4      dbms_output.put_line(:OLD.book_status);
-  5      INSERT INTO logs VALUES(SYSDATE,:OLD.book_name,:OLD.book_status,:NEW.book_status,'UPDATE ACTION');
-  6      ELSIF INSERTING THEN
-  7      dbms_output.put_line('Inserting' || rpad(' ',2,' ') || :NEW.book_name);
-  8      INSERT INTO logs VALUES(SYSDATE,:NEW.book_name,NULL,:NEW.book_status,'INSERT ACTION');
-  9      ELSIF DELETING THEN
- 10      dbms_output.put_line('Deleting' || rpad(' ',2,' ') || :OLD.book_name);
- 11      INSERT INTO logs VALUES(SYSDATE,:OLD.book_name,:OLD.book_status,NULL,'DELETE ACTION');
- 12      END IF;
- 13      END;
- 14      /
+        BEGIN
+        IF UPDATING THEN
+        dbms_output.put_line(:OLD.book_status);
+        INSERT INTO logs VALUES(SYSDATE,:OLD.book_name,:OLD.book_status,:NEW.book_status,'UPDATE ACTION');
+        ELSIF INSERTING THEN
+        dbms_output.put_line('Inserting' || rpad(' ',2,' ') || :NEW.book_name);
+        INSERT INTO logs VALUES(SYSDATE,:NEW.book_name,NULL,:NEW.book_status,'INSERT ACTION');
+        ELSIF DELETING THEN
+        dbms_output.put_line('Deleting' || rpad(' ',2,' ') || :OLD.book_name);
+        INSERT INTO logs VALUES(SYSDATE,:OLD.book_name,:OLD.book_status,NULL,'DELETE ACTION');
+        END IF;
+        END;
+        /
 
 Trigger created.
 
