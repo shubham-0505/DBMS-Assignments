@@ -1,1 +1,1 @@
-All DBMS Lab Assignments as per SPPU Pattern
+Database Management Systems Laboratory
